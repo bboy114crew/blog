@@ -1,8 +1,17 @@
+---
+import ThemeToggleButton from './ThemeToggleButton';
+---
+
 <header class="wrapper">
 	<nav>
 		<a href="/blog/">
 			<span>Nguy Thang(LL)</span>
 		</a>
+		<ThemeToggleButton
+			client:visible
+			labels={{ useLight: 'light', useDark: 'dark' }}
+			isInsideHeader={true}
+		/>
 	</nav>
 </header>
 
