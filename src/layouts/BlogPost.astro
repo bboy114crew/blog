@@ -22,13 +22,22 @@ const {
 <html>
 	<head>
 		<BaseHead title={title} description={description} />
-		<script>
-			const root = document.documentElement;
-			const theme = localStorage.getItem('theme');
-			if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-				root.classList.add('theme-dark');
+		<script is:inline>
+			// This code was migrated/copied from ThemToggleBotton to make the
+			// dark mode toggle instant, vs. hidden inside of a Preact useEffect() call.
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+			if (theme === 'light') {
+				document.documentElement.classList.remove('theme-dark');
 			} else {
-				root.classList.remove('theme-dark');
+				document.documentElement.classList.add('theme-dark');
 			}
 		</script>
 	</head>
