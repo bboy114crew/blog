@@ -12,7 +12,7 @@ const { title, description, publishDate, url } = Astro.props as Props;
 <article class="post-preview">
 	<header>
 		<time>{publishDate}</time>
-		<a href={url} class="container"><h1 class="title">{title}</h1></a>
+		<a href={url} class="preview-container"><h1 class="title">{title}</h1></a>
 	</header>
 	<p>{description}</p>
 	<a href={url}>Read more</a>
@@ -25,11 +25,11 @@ const { title, description, publishDate, url } = Astro.props as Props;
 		border-bottom: 4px solid var(--theme-divider);
 	}
 
-	.container {
+	.post-preview-container {
 		-webkit-text-fill-color: inherit;
 	}
 
-	.container:focus {
+	.post-preview-container:focus {
 		outline: none;
 	}
 
