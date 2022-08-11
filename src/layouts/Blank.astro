@@ -1,0 +1,73 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const {
+	title, description
+} = Astro.props as Props;
+---
+
+<html>
+	<head>
+		<BaseHead title={title} description={description} />
+		<script is:inline>
+			// This code was migrated/copied from ThemToggleBotton to make the
+			// dark mode toggle instant, vs. hidden inside of a Preact useEffect() call.
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+			if (theme === 'light') {
+				document.documentElement.classList.remove('theme-dark');
+			} else {
+				document.documentElement.classList.add('theme-dark');
+			}
+		</script>
+	</head>
+
+	<body>
+		<Header />
+		<article class="wrapper content">
+			<main>
+				<slot></slot>
+			</main>
+		</article>
+	</body>
+</html>
+
+<style>
+	img {
+		width: 100vw;
+		object-fit: cover;
+		object-position: center;
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+		max-width: 1280px;
+	}
+
+	@media (max-width: 50em) {
+		img {
+			height: 260px;
+			margin-top: 0;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.content {
+		margin-bottom: 8rem;
+	}
+
+	.content :global(h2) {
+		margin-top: 4rem;
+	}
+</style>
