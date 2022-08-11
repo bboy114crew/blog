@@ -22,7 +22,7 @@
 
 	--color-blue: #3894ff;
 	--color-blue-rgb: 56, 148, 255;
-	--color-green: #17c083;
+	--color-green: #08b33b;
 	--color-green-rgb: 23, 192, 131;
 	--color-orange: #ff5d01;
 	--color-orange-rgb: 255, 93, 1;
@@ -38,7 +38,7 @@
 
 :root {
 	color-scheme: light;
-	--theme-accent: var(--color-orange);
+	--theme-accent: var(--color-green);
 	--theme-accent-rgb: var(--color-orange-rgb);
 	--theme-accent-opacity: 0.1;
 	--theme-divider: var(--color-gray-100);
@@ -92,8 +92,16 @@ body {
 	}
 }
 
+@font-face {
+  font-family: 'jost';
+  src: url('/fonts/jost.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-	font-family: var(--font-body);
+	font-family: 'jost', var(--font-body);
 	font-size: 1rem;
 	font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
 	line-height: 1.625;
