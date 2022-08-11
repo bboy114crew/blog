@@ -167,6 +167,12 @@ small,
 
 a {
 	color: var(--theme-accent);
+	background: linear-gradient(45deg,var(--theme-accent) 11%,#3894ff 90%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
 	font-weight: 400;
 	text-underline-offset: 0.08em;
 	text-decoration: none;
