@@ -26,7 +26,7 @@ const posts = unsortedPosts.sort(function (a, b) {
 			<main class="content">
 				<section class="intro">
 					<h1 class="title" >{title}</h1>
-					<p>I work at <span class="line">LINE</span> as a Front-End Engineer</p>
+					<p>I work at <a class="line" href="https://line.me/en/">LINE</a> as a Front-End Engineer</p>
 				</section>
 				<section aria-label="Blog post list">
 					{posts.map(({ url, frontmatter }) => (
@@ -55,6 +55,7 @@ const posts = unsortedPosts.sort(function (a, b) {
 
 	.line {
 		color: var(--theme-accent);
+		-webkit-text-fill-color: inherit;
 	}
 	.content {
 		margin-top: 4rem;
