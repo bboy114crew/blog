@@ -45,7 +45,7 @@ const {
 
 	<body>
 		<Header />
-		<article class="wrapper content">
+		<article class="post-container wrapper content">
 			<header>
 				{heroImage && (
 					<img
@@ -68,6 +68,9 @@ const {
 </html>
 
 <style>
+	.post-container {
+		min-height: calc(100vh - 15.5rem - 8px);
+	}
 	img {
 		width: 100vw;
 		object-fit: cover;
@@ -75,14 +78,6 @@ const {
 		margin-top: 2rem;
 		margin-bottom: 4rem;
 		max-width: 1280px;
-	}
-
-	@media (max-width: 50em) {
-		img {
-			height: 260px;
-			margin-top: 0;
-			margin-bottom: 2rem;
-		}
 	}
 
 	.content {
@@ -100,7 +95,6 @@ const {
 		align-items: center;
 		justify-content: center;
 		gap: 1rem;
-
 		padding-bottom: 2rem;
 		margin-bottom: 2rem;
 		border-bottom: 4px solid var(--theme-divider);
@@ -119,4 +113,17 @@ const {
 		font-size: 2.25rem;
 		font-weight: 700;
 	}
+
+	@media (max-width: 50em) {
+		img {
+			height: 260px;
+			margin-top: 0;
+			margin-bottom: 2rem;
+		}
+
+		.content {
+			margin-bottom: 6rem;
+		}
+	}
+
 </style>
