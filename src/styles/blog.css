@@ -100,6 +100,14 @@ body {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('/fonts/Source-Code-Pro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
 	font-family: 'jost', var(--font-body);
 	font-size: 1rem;
@@ -218,12 +226,12 @@ strong {
 /* Supporting Content */
 
 code {
-	--border-radius: 3px;
+	--border-radius: 0.5rem;
 	--padding-block: 0.2rem;
 	--padding-inline: 0.33rem;
 
-	font-family: var(--font-mono);
-	font-size: 0.85em;
+	font-family: 'Source Code Pro', var(--font-mono);
+	font-size: 0.8em;
 	color: inherit;
 	background-color: var(--theme-code-inline-bg);
 	padding: var(--padding-block) var(--padding-inline);
@@ -237,6 +245,8 @@ pre.astro-code > code {
 }
 
 pre {
+	font-family: 'Source Code Pro', var(--font-fallback);
+	font-size: 0.9rem;
 	position: relative;
 	--padding-block: 1rem;
 	--padding-inline: 2rem;
