@@ -54,7 +54,7 @@ myNewFunction();
 myNewFunction();
 ```
 
-### When a function is defined, it gets a bond to the surrounding Local Memory (“Variable Environment”) in which it has been defined
+### When a function is defined, it gets a bond to the surrounding Local Memory (Variable Environment) in which it has been defined
 - We return ```incrementCounter```’s code (function definition) out of outer into
 global and give it a new name - ```myNewFunction```
 - We maintain the bond to outer’s live local memory - it gets ‘returned out’
