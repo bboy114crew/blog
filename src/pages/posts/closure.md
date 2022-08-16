@@ -65,11 +65,12 @@ though outer’s execution context is long gone
 memory first (as we’d expect), but then in ```myNewFunction```’s ‘backpack’
 
 ### What can we call this ‘backpack’?
-- Closed over <strong><em>Variable Environment</em></strong> (C.O.V.E.)
+- Closed over Variable Environment (C.O.V.E.)
 - Persistent Lexical Scope Referenced Data (P.L.S.R.D.)
-- <strong><em>Backpack</em></strong>
-- <strong><em>Closure</em></strong>
-The <strong><em>backpack</em></strong> (or <strong><em>closure</em></strong>) of live data is attached incrementCounter (then to ```myNewFunction```) through a hidden property known as ```[[scope]]``` which persists when the inner function is returned out
+- Backpack
+- Closure
+
+The backpack (or closure) of live data is attached incrementCounter (then to ```myNewFunction```) through a hidden property known as ```[[scope]]``` which persists when the inner function is returned out
 
 ### Let’s run ```outer``` again
 ```javascript
