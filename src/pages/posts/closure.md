@@ -6,7 +6,7 @@ publishDate: "23 Aug 219"
 ---
 
 ## Closure is the most esoteric of JavaScript concepts
-- Enables powerful pro-level functions like ‘once’ and ‘memoize’
+- Enables powerful pro-level functions like <strong><em>once</em></strong> and <strong><em>memoize</em></strong>
 - Many JavaScript design patterns including the module pattern use closure
 - Build iterators, handle partial application and maintain state in an
 asynchronous world
@@ -90,7 +90,7 @@ anotherFunction();
 anotherFunction();
 ```
 
-If we run ```outer``` again and store the returned ```incrementCounter``` function definition in ```anotherFunction```, this new ```incrementCounter``` function was created in a new execution context and therefore has a brand new independent <strong><em>backpack</em></strong>
+If we run ```outer``` again and store the returned ```incrementCounter``` function definition in ```anotherFunction```, this new ```incrementCounter``` function was created in a new execution context and therefore has a brand new independent backpack
 
 ### Closure gives our functions persistent memories and entirely new toolkit for writing professional code
 
