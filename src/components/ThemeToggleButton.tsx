@@ -42,6 +42,18 @@ const ThemeToggle: FunctionalComponent<Props> = ({ labels, isInsideHeader }) => 
 		}
 	}, [theme]);
 
+	const handleChange = (t: string) => {
+		const matchesDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		if ((matchesDarkTheme && t === 'dark') || (!matchesDarkTheme && t === 'light')) {
+			localStorage.removeItem('theme');
+		} else {
+			localStorage.setItem('theme', t);
+		}
+
+		setTheme(t);
+	}
+
 	return (
 		<div class={`theme-toggle ${isInsideHeader ? 'hide-toggle-on-smaller-screens' : ''}`}>
 			{themes.map((t, i) => {
@@ -57,17 +69,7 @@ const ThemeToggle: FunctionalComponent<Props> = ({ labels, isInsideHeader }) => 
 							checked={checked}
 							value={t}
 							aria-label={themeLabel}
-							onChange={() => {
-								const matchesDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-								if ((matchesDarkTheme && t === 'dark') || (!matchesDarkTheme && t === 'light')) {
-									localStorage.removeItem('theme');
-								} else {
-									localStorage.setItem('theme', t);
-								}
-
-								setTheme(t);
-							}}
+							onChange={() => handleChange(t)}
 						/>
 					</label>
 				);
