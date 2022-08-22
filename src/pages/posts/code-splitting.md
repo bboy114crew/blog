@@ -1,6 +1,5 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-draft: true
 title: "Code splitting"
 description: "Web Performance 101."
 publishDate: "05 May 2021"
