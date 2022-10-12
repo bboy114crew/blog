@@ -46,6 +46,7 @@ const {
 	<body>
 		<Header />
 		<article class="post-container wrapper content">
+			<h1 class="writing">Writings.</h1>
 			<header>
 				{heroImage && (
 					<img
@@ -68,9 +69,17 @@ const {
 </html>
 
 <style>
+	.writing {
+    font-size: 100px;
+    line-height: .75;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
 	.post-container {
 		min-height: calc(100vh - 15.5rem - 8px);
 	}
+
 	img {
 		width: 100vw;
 		object-fit: cover;
@@ -91,13 +100,8 @@ const {
 	header {
 		display: flex;
 		flex-direction: column;
-		text-align: center;
-		align-items: center;
 		justify-content: center;
 		gap: 1rem;
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
 	}
 
 	.title,
