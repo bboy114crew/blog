@@ -4,7 +4,7 @@ import Header from '../layouts/Header.astro';
 import Footer from '../layouts/Footer.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 
-let title = "Hey, I'm Steve Nguy!";
+let title = "Steve Nguy!";
 let description = 'I work at LINE as a Front-End Engineer';
 
 // Use Astro.glob to fetch all post with associated frontmatter
@@ -26,18 +26,47 @@ const posts = unsortedPosts.sort(function (a, b) {
 		<div class="wrapper">
 			<main class="content">
 				<section class="intro">
-					<h1 class="title" >{title}</h1>
-					<p>I work at <a class="line" href="https://line.me/en/">LINE</a> as a Front-End Engineer</p>
+					<h1 class="title">{title}</h1>
+					<p class="first">
+						You’ve reached the personal website of Nguy Thang. You can call me as Steve Nguy. It’s nice to meet you.
+					</p>
+					<img class="avatar" alt="me" src="assets/profile.jpeg">
+					<p>
+						I work at <a class="line" href="https://line.me/en/">LINE</a> as a Front-End Engineer
+						If you want to contact me, I prefer email. My address is
+						<img class="icon" alt="mail" src="assets/envelope.png">
+						<a class="line" href="mailto:nguyvanthang@gmail.com">
+							nguyvanthang@gmail.com
+						</a>. Do I know you personally? If so, I hear the latest craze is to add each other on
+						<img class="icon" alt="facebook" src="assets/facebook.png">
+						<a class="line" href="https://www.facebook.com/nguythang312/">
+							Facebook
+						</a>
+						. If it’s code you’re after, you’ll probably prefer
+						<img class="icon" alt="github" src="assets/github.png">
+						<a class="line" href="https://github.com/bboy114crew">
+							GitHub
+						</a>
+						. You’re welcome to follow me on
+						<img class="icon" alt="twitter" src="assets/twitter.png">
+						<a class="line" href="https://twitter.com/nguythang1">
+							Twitter
+						</a>
+						, although whether I have anything interesting to say is another matter. I’ve also posted miscellaneous texts on this website; you’ll find a list below, it’s a mixture of tech and misc writing.
+					</p>
 				</section>
+				<h2>Sporadic Writings.</h2>
 				<section aria-label="Blog post list">
-					{posts.map(({ url, frontmatter }) => (
-						<BlogPostPreview
-							title={frontmatter.title}
-							description={frontmatter.description}
-							publishDate={frontmatter.publishDate}
-							url={url}
-						/>
-					))}
+					<dl>
+						{posts.map(({ url, frontmatter }) => (
+							<BlogPostPreview
+								title={frontmatter.title}
+								description={frontmatter.description}
+								publishDate={frontmatter.publishDate}
+								url={url}
+							/>
+						))}
+					</dl>
 				</section>
 			</main>
 		</div>
@@ -55,10 +84,37 @@ const posts = unsortedPosts.sort(function (a, b) {
 		-webkit-text-fill-color: transparent;
 	}
 
+	.first {
+		position: relative;
+	}
+
+	.avatar {
+		display: block;
+		width: 400px;
+		margin: auto;
+		border: 1px solid #555;
+	}
+
+	@media (max-width: 50em) {
+		.avatar {
+			width: 100%;
+		}
+	}
+
 	.line {
 		color: var(--theme-accent);
 		-webkit-text-fill-color: inherit;
 	}
+
+	.icon {
+		display: inline-block;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+	}
+
 	.content {
 		margin-top: 4rem;
 		margin-bottom: 8rem;

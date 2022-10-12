@@ -9,20 +9,29 @@ export interface Props {
 const { title, description, publishDate, url } = Astro.props as Props;
 ---
 
-<article class="post-preview">
-	<header>
+<artdticle class="post-preview">
+	<header class="post-preview-main">
 		<time>{publishDate}</time>
 		<a href={url} class="post-preview-container"><h1 class="title">{title}</h1></a>
 	</header>
-	<p>{description}</p>
-	<a href={url}>Read more</a>
-</article>
+</artdticle>
 
 <style>
 	.post-preview {
 		padding-bottom: 2rem;
 		margin-bottom: 2rem;
 		border-bottom: 4px solid var(--theme-divider);
+	}
+
+	.post-preview-main {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.post-preview-description {
+		margin-right: 10px;
 	}
 
 	.post-preview-container {
@@ -36,6 +45,8 @@ const { title, description, publishDate, url } = Astro.props as Props;
 	.title,
 	time {
 		margin: 0;
+		padding-right: 20px;
+		min-width: 134px;
 	}
 
 	time {
@@ -44,8 +55,16 @@ const { title, description, publishDate, url } = Astro.props as Props;
 	}
 
 	.title {
-		font-size: 2.25rem;
+		font-size: 1.25rem;
 		font-weight: 700;
 		color: var(--theme-text);
+	}
+
+	@media (max-width: 50em) {
+		time {
+			min-width: 115px;
+			font-size: 1rem;
+			color: var(--theme-text-lighter);
+		}
 	}
 </style>

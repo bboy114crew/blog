@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Promise vs Callback"
-description: "Javascript Explained 101."
+description: "Javascript Explained 101"
 publishDate: "21 Apr 2020"
 ---
 

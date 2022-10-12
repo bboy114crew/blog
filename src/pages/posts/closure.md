@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Closure"
-description: "Javascript Explained 101."
+description: "Javascript Explained 101"
 publishDate: "23 Aug 219"
 ---
 

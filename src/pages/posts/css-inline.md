@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "CSS Inline"
-description: "CSS Explained 101."
+description: "CSS Explained 101"
 publishDate: "20 Dec 2020"
 ---
 
