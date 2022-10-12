@@ -62,9 +62,9 @@ attached on the back of ```incrementCounter```’s function definition.
 - So outer’s local memory is now stored attached to ```myNewFunction``` - even
 though outer’s execution context is long gone
 - When we run ```myNewFunction``` in global, it will first look in its own local
-memory first (as we’d expect), but then in ```myNewFunction```’s ‘backpack’
+memory first (as we’d expect), but then in ```myNewFunction```’s **backpack**
 
-### What can we call this ‘backpack’?
+### What can we call this **backpack**?
 - Closed over Variable Environment (C.O.V.E.)
 - Persistent Lexical Scope Referenced Data (P.L.S.R.D.)
 - Backpack
