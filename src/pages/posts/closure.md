@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "Closure"
 description: "Javascript Explained 101"
-publishDate: "23 Aug 219"
+publishDate: "23 Aug 2019"
 ---
 
 ## Closure is the most esoteric of JavaScript concepts
