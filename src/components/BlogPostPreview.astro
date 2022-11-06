@@ -30,7 +30,13 @@ const { title, description, publishDate, url } = Astro.props as Props;
 
 	.post-preview-container {
 		word-wrap: none;
-		-webkit-text-fill-color: inherit;
+		color: var(--theme-accent);
+		background: linear-gradient(45deg,var(--theme-accent) 11%,#3894ff 90%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
 	}
 
 	.post-preview-container:focus {

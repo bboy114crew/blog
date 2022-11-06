@@ -107,7 +107,12 @@ const posts = unsortedPosts.sort(function (a, b) {
 
 	.line {
 		color: var(--theme-accent);
-		-webkit-text-fill-color: inherit;
+		background: linear-gradient(45deg,var(--theme-accent) 11%,#3894ff 90%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
 	}
 
 	.icon {
