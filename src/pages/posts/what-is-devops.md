@@ -13,9 +13,6 @@ CI and CD are two acronyms frequently used in modern development practices and D
 
 To put it simply continuous integration is part of both continuous delivery and continuous deployment. And continuous deployment is like continuous delivery, except that releases happen automatically.
 
-Differences between continuous integration, continuous delivery, and continuous deployment
-
-<img width="100%" src="/assets/cicd.png" alt="CICD">
 
 ## Reference:
 [5 Key DevOps principles](https://www.atlassian.com/devops/what-is-devops)
