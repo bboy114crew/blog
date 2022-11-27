@@ -4,7 +4,7 @@ import preact from '@astrojs/preact';
 export default defineConfig({
 	integrations: [preact()],
 	site: 'https://bboy114crew.github.io',
-	base: '/blog',
+	base: '/',
 	legacy: {
     astroFlavoredMarkdown: true,
   },
