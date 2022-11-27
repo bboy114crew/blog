@@ -1,0 +1,155 @@
+---
+import BaseHead from "./BaseHead.astro";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		publishDate: string;
+		heroImage?: {
+			src: string;
+			alt: string;
+		};
+	};
+}
+
+const {
+	content: { title, description, publishDate, heroImage },
+} = Astro.props as Props;
+---
+
+<html>
+	<head>
+		<BaseHead title={title} description={description} />
+		<script is:inline>
+			// This code was migrated/copied from ThemToggleBotton to make the
+			// dark mode toggle instant, vs. hidden inside of a Preact useEffect() call.
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+			if (theme === 'light') {
+				document.documentElement.classList.remove('theme-dark');
+			} else {
+				document.documentElement.classList.add('theme-dark');
+			}
+		</script>
+	</head>
+
+	<body>
+		<Header />
+		<article class="post-container wrapper content">
+			<h1 class="writing">Podcasts.</h1>
+			<header>
+				{heroImage && (
+					<img
+						width="720"
+						height="420"
+						loading="lazy"
+						src={heroImage.src}
+						alt={heroImage.alt}
+					/>
+				)}
+				<div class="title-container">
+					<time>{publishDate}</time>
+					<h1 class="title">{title}</h1>
+				</div>
+			</header>
+			<main>
+				<slot></slot>
+			</main>
+		</article>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.writing {
+    font-size: 100px;
+    line-height: .75;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.post-container {
+		min-height: calc(100vh - 15.5rem - 8px);
+	}
+
+	img {
+		width: 100vw;
+		object-fit: cover;
+		object-position: center;
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+		max-width: 1280px;
+	}
+
+	.content {
+		margin-bottom: 3rem;
+	}
+
+	.content :global(h2) {
+		margin-top: 4rem;
+	}
+
+	header {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.title,
+	time {
+		margin: 0;
+	}
+
+	time {
+		position: absolute;
+    margin: 2px 0 0 -170px;
+    text-align: right;
+		font-size: 1.5rem;
+		color: var(--theme-text-lighter);
+	}
+
+	.title-container {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.title {
+		font-size: 2.25rem;
+		font-weight: 700;
+	}
+
+	@media (max-width: 50em) {
+		img {
+			height: 260px;
+			margin-top: 0;
+			margin-bottom: 2rem;
+		}
+
+		time {
+			position: static;
+			margin: 0;
+		}
+
+		.writing {
+			font-size: 4.7rem;
+		}
+
+		.content {
+			margin-bottom: 6rem;
+		}
+	}
+
+</style>
