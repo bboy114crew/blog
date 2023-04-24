@@ -11,6 +11,7 @@ Reactivity and Reactive Programming have historically been hard words to nail do
 To declaratively express the relationship between values that change over time.
 
 > a = b + c
+>
 > where the value of a updates whenever the value of b or c changes.
 
 ## Reactivity in Frameworks
