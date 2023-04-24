@@ -40,9 +40,9 @@ class Timer extends React.Component {
   @observable secondsPassed = 0;
 
   componentWillMount() {
-  setInterval(() => {
-  this.secondsPassed++;
-  }, 1000);
+    setInterval(() => {
+      this.secondsPassed++;
+    }, 1000);
   }
 
   render() {
